@@ -255,7 +255,10 @@ describe('withAuthUser: rendering/redirecting', () => {
         message="How are you?"
       />
     )
-    expect(mockRouterReplace).toHaveBeenCalledWith('/my-auth')
+    expect(mockRouterReplace).toHaveBeenCalledWith({
+      pathname: '/my-auth',
+      query: {},
+    })
   })
 
   it('logs a debugging message when redirecting to login', () => {
@@ -343,7 +346,10 @@ describe('withAuthUser: rendering/redirecting', () => {
         message="How are you?"
       />
     )
-    expect(mockRouterReplace).toHaveBeenCalledWith('/some-auth-page')
+    expect(mockRouterReplace).toHaveBeenCalledWith({
+      pathname: '/some-auth-page',
+      query: {},
+    })
   })
 
   it('does not redirect to login when server-side, even when a redirecting strategy is set (redirects here are client-side only)', () => {
@@ -492,7 +498,10 @@ describe('withAuthUser: rendering/redirecting', () => {
     )
     expect(propsSpy.ctx).toBeUndefined()
     expect(propsSpy.AuthUser.id).toBeNull()
-    expect(mockRouterReplace).toHaveBeenCalledWith('/some-auth-page')
+    expect(mockRouterReplace).toHaveBeenCalledWith({
+      pathname: '/some-auth-page',
+      query: {},
+    })
   })
 
   it('redirects to the app on the client side only when there is a user, a redirect-to-app-when-authed strategy is set, and the request to set cookies has completed', () => {
@@ -550,7 +559,10 @@ describe('withAuthUser: rendering/redirecting', () => {
         message="How are you?"
       />
     )
-    expect(mockRouterReplace).toHaveBeenCalledWith('/my-app/here/')
+    expect(mockRouterReplace).toHaveBeenCalledWith({
+      pathname: '/my-app/here/',
+      query: {},
+    })
   })
 
   it('logs a debugging message when redirecting to the app', () => {
@@ -728,9 +740,10 @@ describe('withAuthUser: rendering/redirecting', () => {
       />
     )
     expect(ctxSpy).toBeUndefined()
-    expect(mockRouterReplace).toHaveBeenCalledWith(
-      '/my-app/here/?email=abc@example.com'
-    )
+    expect(mockRouterReplace).toHaveBeenCalledWith({
+      pathname: '/my-app/here/?email=abc@example.com',
+      query: {},
+    })
   })
 
   it('renders null when redirecting to login and whenUnauthedBeforeInit === AuthAction.RETURN_NULL', () => {
@@ -1040,7 +1053,10 @@ describe('withAuthUser: rendering/redirecting', () => {
         message="How are you?"
       />
     )
-    expect(mockRouterReplace).toHaveBeenCalledWith('/my-app/here/')
+    expect(mockRouterReplace).toHaveBeenCalledWith({
+      pathname: '/my-app/here/',
+      query: {},
+    })
   })
 })
 

@@ -157,7 +157,10 @@ const withAuthUser =
           if (basePath === false) {
             window.location.replace(destination)
           } else {
-            router.replace({ query: { ...router.query }, pathname: destination })
+            router.replace({
+              query: { ...router.query },
+              pathname: destination,
+            })
           }
         },
         [router]
