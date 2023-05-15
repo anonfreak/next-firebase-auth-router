@@ -59,6 +59,7 @@ type URLResolveFunction = (obj: {
 type RedirectObject = {
   destination: string | URLResolveFunction
   basePath: boolean
+  keepQuery: boolean
 }
 
 type PageURL = string | RedirectObject | URLResolveFunction

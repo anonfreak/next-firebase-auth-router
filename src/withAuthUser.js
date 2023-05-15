@@ -153,12 +153,12 @@ const withAuthUser =
 
       const router = useRouter()
       const routeToDestination = useCallback(
-        ({ basePath, destination }) => {
+        ({ basePath, destination, keepQuery }) => {
           if (basePath === false) {
             window.location.replace(destination)
           } else {
             router.replace({
-              query: { ...router.query },
+              query: keepQuery ? { ...router.query } : {},
               pathname: destination,
             })
           }

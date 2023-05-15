@@ -3,6 +3,7 @@ import { getConfig } from 'src/config'
 const REDIRECT_DEFAULTS = {
   basePath: true,
   permanent: false,
+  keepQuery: false,
 }
 
 const getDestination = ({ ctx, AuthUser, redirectDestination }) => {
