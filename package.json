@@ -1,6 +1,6 @@
 {
-  "name": "next-firebase-auth",
-  "version": "1.0.0-canary.19",
+  "name": "@airleadrepo/next-firebase-auth",
+  "version": "1.0.1",
   "description": "Simple Firebase authentication for all Next.js rendering strategies",
   "keywords": [
     "Next",
@@ -17,6 +17,7 @@
   "author": "Gladly Team",
   "license": "MIT",
   "scripts": {
+    "artifactregistry-login": "npx google-artifactregistry-auth",
     "build": "npm-run-all -s build:clean build:src",
     "build:clean": "rm -rf ./build",
     "build:src": "NODE_ENV=production webpack",
@@ -67,6 +68,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "firebase": "^9.9.1",
     "firebase-admin": "^11.0.0",
+    "google-artifactregistry-auth": "^3.1.1",
     "jest": "^28.1.3",
     "jest-environment-jsdom": "^28.1.3",
     "mockdate": "^3.0.2",
